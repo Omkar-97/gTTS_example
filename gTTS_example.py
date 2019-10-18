@@ -14,9 +14,15 @@ def get_candy():
         n = int(input())
         w_cnt = n
         temp = 0
+        rem_w = n
         while w_cnt > 0:
             if w_cnt % 3 == 0:
                 temp += 1
+                rem_w -= 3
+                if rem_w > 0:
+                    temp_w = rem_w + temp
+                    if temp_w % 3 == 0:
+                        temp += 1
             w_cnt -= 1
         print("me: I want {} candies".format(n))
         print("shopkeeper: Sure, it will cost you around {}$".format(n))
